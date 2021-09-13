@@ -1,0 +1,21 @@
+type CreateTeachersDto {
+    id: Int!
+    name: String!
+}
+input TeacherInput {
+    id: ID
+    name: String!
+
+}
+
+type Mutation {
+    create(input: TeacherInput!): CreateTeachersDto!
+    update(input: TeacherInput!): CreateTeachersDto!
+}
+
+
+type Query {
+    hello(name: String!): String!
+    teachersAll: [CreateTeachersDto!]!
+    getTeacher(id: Int!): CreateTeachersDto
+}
